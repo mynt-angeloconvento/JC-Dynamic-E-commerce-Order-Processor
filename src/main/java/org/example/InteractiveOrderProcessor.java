@@ -94,6 +94,29 @@ public class InteractiveOrderProcessor {
         System.out.println();
 
         System.out.printf("Final Order Total: $%.2f%n", finalOrderTotal);
+        System.out.println();
+
+        System.out.println("--- String Equality Demo ---");
+        System.out.print("Enter first string for comparison: ");
+        String firstString = sc.nextLine();
+        System.out.print("Enter second string for comparison: ");
+        String secondString = sc.nextLine();
+        System.out.println();
+
+        System.out.printf("String 1: \"%s\"%n", firstString);
+        System.out.printf("String 2: \"%s\"%n", secondString);
+        System.out.println();
+
+        boolean references = firstString == secondString;
+        boolean content = firstString.equals(secondString);
+        boolean contentIgnoreCase = firstString.equalsIgnoreCase(secondString);
+        System.out.printf(
+                "String 1 == String 2: %b (Compares references, which are different for user input strings)%n",
+                references);
+        System.out.printf("String 1 .equals() String 2: %b (Content is %s)%n", content,
+                content ? "identical" : "different");
+        System.out.printf("String 1 .equalsIgnoreCase() String 2: %b (Content is %s, ignoring case)%n",
+                contentIgnoreCase, contentIgnoreCase ? "identical" : "different");
 
         sc.close();
     }
